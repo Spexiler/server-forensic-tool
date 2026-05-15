@@ -1,0 +1,4210 @@
+======================================================================
+                    服务器架构与服务分析报告
+======================================================================
+生成时间: 2026-05-15 19:12:29
+
+⚠️ 警告信息:
+--------------------------------------------------
+  - 文件架构分析: Function _exec timed out after 15 seconds
+  - Web服务器分析: Function _exec timed out after 15 seconds
+  - 数据库分析: Function _exec timed out after 15 seconds
+  - 中间件分析: Function _exec timed out after 15 seconds
+  - 反向代理分析: Function _exec timed out after 15 seconds
+  - 访问日志搜索: Function _exec timed out after 15 seconds
+  - 访问日志分析: Function _exec timed out after 15 seconds
+  - 后端服务发现: Function _exec timed out after 15 seconds
+  - SSH安全分析: Function _exec timed out after 15 seconds
+  - 启动项分析: Function _exec timed out after 15 seconds
+  - 日志文件分析: Function _exec timed out after 15 seconds
+  - 数据库探测: Function _exec timed out after 15 seconds
+  - 出站连接追踪: Function _exec timed out after 15 seconds
+  - 时间线分析: Function _exec timed out after 15 seconds
+
+【执行摘要】
+--------------------------------------------------
+  • 服务器角色: web_server, database_server, application_server
+  • Web服务: apache, nginx
+  • 数据库: mysql
+  • 反向代理规则: 9条
+  • 后端服务: 971个
+
+【服务器角色识别】
+--------------------------------------------------
+识别到的角色: web_server, database_server, application_server
+
+【服务配置分析】
+--------------------------------------------------
+Web服务器:
+  - APACHE
+    监听端口: []
+    文档根目录: ['/www/wwwroot/119.29.2.163/', '/www/wwwroot/119.91.70.59']
+  - NGINX
+    监听端口: ['888', '80', '443']
+数据库服务:
+  - mysql
+
+【Web反向代理配置】
+--------------------------------------------------
+发现 9 条代理规则:
+
+  [1] ['175.178.227.136']
+      监听端口: 80
+
+  [2] ['175.178.227.136']
+      监听端口: 443
+
+  [3] ['127.0.0.1']
+      监听端口: 80
+      代理目标:
+        - fastcgi://unix:/tmp/php-cgi-52.sock
+        - fastcgi://unix:/tmp/php-cgi-53.sock
+        - fastcgi://unix:/tmp/php-cgi-54.sock
+        ... 共 11 个目标
+
+  [4] ['bt.default.com']
+      监听端口: 80
+
+  [5] ['{server_name}']
+      监听端口: None
+
+  [6] ['294f3f9a.119.91.70.59']
+      监听端口: 80
+
+  [7] ['SSL.119.91.70.59']
+      监听端口: 443
+
+  [8] ['b7660819.119.29.2.163']
+      监听端口: 80
+
+  [9] ['SSL.119.29.2.163']
+      监听端口: 443
+
+
+【Web访问日志分析】
+--------------------------------------------------
+总请求数: 0
+  未发现访问日志或无法解析
+
+【后端服务自动发现】
+--------------------------------------------------
+发现 971 个后端服务:
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\etc\sudo_logsrvd.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\nginx_new.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\ng_file_bk.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\backup.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\fastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\nginx.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\proxy.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\luawaf.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-52-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-53-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-54-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-56-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-70-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-71-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-72-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-73-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-74-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-80-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-81-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-82-wpfastcgi.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\nginx\conf\enable-php-83-wpfastcgi.conf
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\phplib.conf
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\phplib.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\softList.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\softList.conf
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\softList.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\apache\0.default.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\apache\119.29.2.163.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\apache\119.91.70.59.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\0.default.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\phpfpm_status.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\119.29.2.163.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\119.91.70.59.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\openlitespeed\detail\119.29.2.163.conf
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\openlitespeed\detail\119.91.70.59.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\proxy\119.29.2.163\8c3775a7cde72899b947ccd29041c643_119.29.2.163.conf
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\vhost\nginx\proxy\119.91.70.59\1db0d934f51191ca40a27bc5e50ceab7_119.91.70.59.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\supervisor\tests\fixtures\issue-986.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\sbin\update-exim4.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\src\linux-headers-6.1.0-37-amd64\include\config\auto.conf
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\x86_64-linux-gnu\gconv\gconv-modules.d\gconv-modules-extra.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\doc\sudo\examples\sudo_logsrvd.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\doc\exim4-base\examples\example.conf
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\etc\exim4\update-exim4.conf.conf
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\dk_project\dk_app\apps.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\crontab.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\docker_project_info.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\docker_project_info.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\docker_project_info.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\lib.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\lib.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\safe_autofix.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\safe_autofix.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\config\safe_autofix.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\home.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\list.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\list.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\list.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\list.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\list.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\pay_type.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\pay_type.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\phplib.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\dir_history.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 6379: redis
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\mod\base\process\process_ps.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\data\safeCloud\config.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\ace\ace.editor.config.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\ace\editor.config.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\data\area.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\cht\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\de\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\en\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\fra\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ind\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\home.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\layout.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\it\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\kor\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\database.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\docker.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\security.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\pt\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\ru\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\spa\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\soft.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\waf.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\tur\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\uk\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\vie\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\zh\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\cht\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\de\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\fra\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ind\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\home.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\layout.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\site.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\it\wp.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\kor\wp.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\database.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\docker.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\security.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\pt\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\ru\wp.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\spa\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\site.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\tur\wp.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\layout.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\mail.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\uk\wp.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\plugin.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\security.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\soft.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\ssl.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\wp.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\vie\index.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\config.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\crontab.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\crontab.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\crontab.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\database.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\database.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\docker.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\home.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\layout.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\plugin.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\plugin.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\security.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\site.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\site.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\soft.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\soft.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\waf.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\vite\lang\all\zh\wp.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\log.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\log.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\log.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\public.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\public.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\public.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\public.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\public.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\template.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\English\template.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\log.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\log.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\public.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\public.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\public.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\public.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\language\Simplified_Chinese\public.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\static\ckeditor\samples\toolbarconfigurator\font\config.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\cht.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\de.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\fra.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ind.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\it.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\kor.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\pt.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\ru.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\spa.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\tur.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\uk.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\vie.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\all\zh.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\cht\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\de\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\en\server.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\fra\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ind\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\it\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\kor\server.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\pt\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\ru\server.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\spa\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\tur\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\uk\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\vie\server.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\BTPanel\languages\zh\server.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-10-21.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-10-24.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-10-25.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-10-27.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-12-27.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-12-28.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2025-12-29.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2026-02-28.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2026-03-25.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2026-03-26.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2026-03-29.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\logs\request\2026-04-26.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso3166-2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso639-3.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso639-3.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso639-3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso639-3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\pycountry\databases\iso639-5.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\compute.v1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\spanner.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta4.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta4.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\artifactregistry.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1alpha.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudsearch.v1.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudsearch.v1.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\sqladmin.v1beta4.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\sqladmin.v1beta4.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\compute.beta.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\apigee.v1.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datastream.v1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datastream.v1.json
+
+  端口 27017: mongodb
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudtrace.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudscheduler.v1beta1.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\androidmanagement.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\index.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta5.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1beta5.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datacatalog.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\managedidentities.v1.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\logging.v2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\managedidentities.v1beta1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\metastore.v1alpha.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\remotebuildexecution.v2.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datamigration.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\domains.v1.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\jobs.v2.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\androidenterprise.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\remotebuildexecution.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\composer.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\bigquery.v2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\managedidentities.v1alpha1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\domains.v1beta1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataproc.v1beta2.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataproc.v1beta2.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\metastore.v1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\bigqueryconnection.v1beta1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudtasks.v2beta2.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\identitytoolkit.v2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\container.v1beta1.json
+
+  端口 10086: v2ray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\container.v1beta1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\appengine.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudbuild.v1alpha2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudscheduler.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\compute.alpha.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datastream.v1alpha1.json
+
+  端口 3306: mysql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\sqladmin.v1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\sqladmin.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\remotebuildexecution.v1alpha.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datamigration.v1beta1.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\jobs.v3p1beta1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudtasks.v2beta3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\civicinfo.v2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\domains.v1alpha2.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\metastore.v1beta.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\gmail.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataflow.v1b3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataflow.v1b3.json
+
+  端口 80: nginx
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\binaryauthorization.v1beta1.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\jobs.v4.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\contentwarehouse.v1.json
+
+  端口 443: trojan
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\contentwarehouse.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\contentwarehouse.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\contentwarehouse.v1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\contentwarehouse.v1.json
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\identitytoolkit.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\composer.v1beta1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudcommerceprocurement.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\playdeveloperreporting.v1beta1.json
+
+  端口 5432: postgresql
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\datacatalog.v1beta1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\pubsublite.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\container.v1.json
+
+  端口 10086: v2ray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\container.v1.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\jobs.v3.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\playdeveloperreporting.v1alpha1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudbuild.v1alpha1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataproc.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\dataproc.v1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudbuild.v1beta1.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\storagetransfer.v1.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\googleapiclient\discovery_cache\documents\cloudtasks.v2.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\local\qcloud\python\lib\python3.7\site-packages\jsonschema\benchmarks\issue232\issue.json
+
+  端口 10086: xray
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\ruby\gems\3.1.0\gems\typeprof-0.21.2\vscode\tsconfig.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_3166-2.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-2.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-3.json
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-3.json
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-3.json
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\iso-codes\json\iso_639-5.json
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\docx\templates\default-styles.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\docx\templates\default-docx-template\word\styles.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\panel\pyenv\lib\python3.12\site-packages\docx\templates\default-docx-template\word\stylesWithEffects.xml
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\pci-device.xml
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\pci-device.xml
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\pci-vendor.xml
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\pci-vendor.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\usb-device.xml
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\usb-device.xml
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\discover\usb-vendor.xml
+
+  端口 None: relay_node
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\mime\packages\freedesktop.org.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_3166-2.xml
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-2.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-3.xml
+
+  端口 7000: frp
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-3.xml
+
+  端口 9999: brook
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-3.xml
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-3.xml
+
+  端口 80: apache
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\xml\iso-codes\iso_639-5.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\X11\xkb\rules\base.extras.xml
+
+  端口 None: gost
+    进程: None
+    配置: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\share\X11\xkb\rules\evdev.extras.xml
+
+
+【SSH安全态势评估】
+--------------------------------------------------
+失败登录尝试: 0次
+  ✓ 未检测到异常登录
+
+  SSH配置检查:
+    ✓ SSH配置较为安全
+
+【程序启动项与保活机制】
+--------------------------------------------------
+发现 4784 个自启动项:
+
+  • site_total
+    命令: /www/server/site_total/site_total...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\www\server\site_total\scripts\site_total.service
+
+  • dpkg-db-backup
+    命令: /usr/libexec/dpkg/dpkg-db-backup...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\dpkg-db-backup.service
+
+  • systemd-ask-password-console
+    命令: systemd-tty-ask-password-agent --watch --console...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-ask-password-console.service
+
+  • systemd-boot-check-no-failures
+    命令: /lib/systemd/systemd-boot-check-no-failures...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-boot-check-no-failures.service
+
+  • systemd-hostnamed
+    命令: /lib/systemd/systemd-hostnamed...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-hostnamed.service
+
+  • systemd-localed
+    命令: /lib/systemd/systemd-localed...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-localed.service
+
+  • systemd-logind
+    命令: /lib/systemd/systemd-logind...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-logind.service
+
+  • systemd-remount-fs
+    命令: /lib/systemd/systemd-remount-fs...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-remount-fs.service
+
+  • systemd-tmpfiles-setup
+    命令: systemd-tmpfiles --create --remove --boot --exclude-prefix=/...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\systemd-tmpfiles-setup.service
+
+  • ssh
+    命令: /usr/sbin/sshd -D $SSHD_OPTS...
+    来源: systemd: C:\hlnet\1-1778552926\tmp.qcow2\分区2\usr\lib\systemd\system\ssh.service
+
+  ... 还有 4774 个启动项
+
+【系统日志文件分析】
+--------------------------------------------------
+发现 225 个日志文件
+
+  日志文件列表:
+        0.01MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\cvm_init.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\net_affinity.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\cpuidle_support.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\schedule.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\setRps.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\set_xps.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\tlinux_xps.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\virtio_blk_affinity.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\nv_gpu_conf.log
+             | 用途: 未分类日志
+        0.00MB | C:\hlnet\1-1778552926\tmp.qcow2\分区2\tmp\gpudirect_rdma_setup.log
+             | 用途: 未分类日志
+
+【数据库服务探测】
+--------------------------------------------------
+  未发现数据库服务
+
+【出站连接追踪】
+--------------------------------------------------
+发现 2 条出站连接:
+
+  → 224.0.0.1:None (TCP)
+    来源: 2025-12-21T00:06:51.129719+08:00 localhost kernel: [5204465.157286] [UFW BLOCK] IN=eth0 OUT= MAC=01:
+
+  → 224.0.0.1:None (TCP)
+    来源: C:\hlnet\1-1778552926\tmp.qcow2\分区2\var\log\ufw.log.1
+
+
+【事件时间线】
+--------------------------------------------------
+  未提取到时间线事件
+
+【网络与端口分析】
+--------------------------------------------------
+端口-服务映射:
+
+【IP关联分析】
+--------------------------------------------------
+发现IP总数: 0
+内网IP: 0
+外网IP: 0
+
+【文件架构解析】
+--------------------------------------------------
+
+📊 目录统计:
+  • 文件总数: 71,908
+  • 目录总数: 5,835
+  • 总大小: 21215.51 MB
+
+📁 目录角色分布:
+  • 后端服务: 4452 个
+  • Web应用程序: 863 个
+  • 配置文件: 176 个
+  • 缓存目录: 136 个
+  • 静态资源: 94 个
+  • 系统配置: 43 个
+  • 安全相关: 16 个
+  • 日志文件: 15 个
+
+【完整服务架构图】
+==================================================
+
+  外部客户端
+       ↓
+
+==================================================
+
+
+【完整服务架构图】
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Layer 0: 外部客户端 [client]
+──────────────────────────────────────────────────────────────────────
+  (无组件)
+
+──────────────────────────────────────────────────────────────────────
+Layer 1: 入口层 [gateway]
+──────────────────────────────────────────────────────────────────────
+  (无组件)
+
+======================================================================
+
+数据覆盖完整性: 33%
+可用数据源:
+  ✓ network
+  ✗ web_config
+  ✗ access_log
+  ✗ backend
+  ✓ ssh
+  ✗ startup
+
+======================================================================
+报告结束
+======================================================================
+
+
+【完整服务架构图】
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Layer 0: 外部客户端 [client]
+──────────────────────────────────────────────────────────────────────
+  (无组件)
+
+──────────────────────────────────────────────────────────────────────
+Layer 1: 入口层 [gateway]
+──────────────────────────────────────────────────────────────────────
+  (无组件)
+
+======================================================================
+
+数据覆盖完整性: 33%
+可用数据源:
+  ✓ network
+  ✗ web_config
+  ✗ access_log
+  ✗ backend
+  ✓ ssh
+  ✗ startup
+
+
+【服务器架构流程图】
+============================================================
+
+组件层次:
+------------------------------------------------------------
+
+  用户层:
+    👤 外部用户
+       └─ 发起HTTP请求
+
+  Web层:
+    🌐 APACHE
+       └─ 端口: 
+    🌐 NGINX
+       └─ 端口: 888, 80, 443
+
+  数据层:
+    💾 MYSQL
+       └─ 端口: 
+
+============================================================
+【数据流向】
+------------------------------------------------------------
+
+  👤外部用户 → 🌐APACHE → 🌐NGINX → 💾MYSQL
+
+  连接关系:
+    外部用户 → APACHE
+    外部用户 → NGINX
+    APACHE → MYSQL
+    NGINX → MYSQL
+
+============================================================
+【访问处理流程】
+------------------------------------------------------------
+
+1. 用户通过HTTP/HTTPS访问Web服务器
+2. 应用服务器处理业务逻辑并访问数据库
+  - Apache提供Web服务
+  - Nginx作为反向代理处理静态请求
+  - MYSQL存储持久化数据
+
+典型请求流程:
+  请求 → Nginx → 应用处理 → 数据库查询 → 响应
